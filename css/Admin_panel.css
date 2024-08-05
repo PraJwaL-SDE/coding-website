@@ -1,0 +1,91 @@
+.problem{
+    width:1200px;
+    height:50px;
+    display: flex;
+    flex-direction: row;
+    border: 5px rgb(255, 255, 255) solid;
+    align-items: center;
+    margin:0 20px;
+    padding-left: 20px;
+    font-size: 18px;
+    background-color: gray;
+    color: white;
+    border-radius: 20px;    
+}
+add-problem{
+    width:50vh;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px rgb(255, 255, 255) solid;
+    margin:0 20px;
+    padding-left: 20px;
+    font-size: 18px;
+    background-color: gray;
+    color: white;
+    border-radius: 20px;    
+}
+
+.problem-title{
+    width: 800px;
+    padding-left: 10px;
+}
+.problem-difficulty{
+    margin-left: 20px;
+}
+
+
+.problem-edit-btn{
+    margin-left: 60px;
+    height: 40px;
+    padding: 0 40px;
+    text-align: center;
+    background-color: #322daf; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    word-spacing: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-size: 18px; 
+    cursor: pointer;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.problem-delete-btn{
+    margin-left: 60px;
+    height: 40px;
+    padding: 0 40px;
+    text-align: center;
+    background-color: #c67d2f; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    word-spacing: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-size: 18px; 
+    cursor: pointer;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+
+
+.problem-edit-btn:hover {
+    background-color: #2f00ff;
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2);
+}
+
+.problem-delete-btn:hover {
+    background-color: #d42626;
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2);
+}

@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+}
+
+.profile-picture img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.profile-info h2 {
+    margin-top: 0;
+}
+
+.main-content {
+    flex: 2;
+    padding: 20px;
+}
+
+.about-me,
+.skills,
+.education {
+    margin-bottom: 30px;
+}
+
+.about-me h2,
+.skills h2,
+.education h2 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
