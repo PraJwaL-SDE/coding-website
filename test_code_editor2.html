@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Editor</title>
+<link rel="stylesheet" href="codemirror-5.65.16/lib/codemirror.css">
+<link rel="stylesheet" href="codemirror-5.65.16/theme/material.css">
+<link rel="stylesheet" href="codemirror-5.65.16/addon/hint/show-hint.css">
+<script src="codemirror-5.65.16/lib/codemirror.js"></script>
+<script src="codemirror-5.65.16/mode/clike/clike.js"></script>
+<script src="codemirror-5.65.16/addon/edit/closebrackets.js"></script>
+<script src="codemirror-5.65.16/addon/edit/matchbrackets.js"></script>
+<script src="codemirror-5.65.16/addon/hint/show-hint.js"></script>
+
+
+<!-- Custom CSS for indent lines -->
+<style>
+    
+    
+</style>
+</head>
+<body>
+<textarea class="code-editor" id="code-editor">
+    {
+        {
+            
+        }
+    }
+</textarea>
+
+
+<script>
+    const codeEditor = document.getElementById("code-editor");
+
+// Set up CodeMirror with the custom hint function
+var editor = CodeMirror.fromTextArea(codeEditor, {
+  mode: "text/x-java",
+  lineNumbers: true,
+  theme: 'material',
+  autoCloseBrackets: true,
+  matchBrackets: true,
+  lineWrapping: true,
+  indentUnit: 4,
+  extraKeys: {
+    "Ctrl-/": "toggleComment",
+    "Ctrl-Space": "autocomplete"
+  },
+  styleActiveLine: true, // Highlight the current line
+  
+});
+
+</script>
+</body>
+</html>

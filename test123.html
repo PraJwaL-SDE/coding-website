@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Code Editor with Autocomplete</title>
+    <!-- Include CodeMirror library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <!-- Include CodeMirror Java mode -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/clike/clike.min.js"></script>
+    <!-- Include CodeMirror autocomplete addon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/hint/show-hint.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/hint/show-hint.min.css">
+    <!-- Include Java suggestions -->
+    <script>
+        const javaSuggestions = ["public", "class", "void", "int", "String", "if", "else", "for", "while", "System.out.println"];
+    </script>
+</head>
+<body>
+    <!-- Create a textarea for the editor -->
+    <textarea id="java-editor"></textarea>
+
+    <script>
+        // Initialize CodeMirror editor with Java mode and autocomplete addon
+        var javaEditor = CodeMirror.fromTextArea(document.getElementById("java-editor"), {
+            mode: "text/x-java",
+            lineNumbers: true,
+            extraKeys: { "Ctrl-Space": "autocomplete" },
+            hintOptions: {
+                hint: function(editor, options) {
+                    var word = /[\w$]+/; // Match word characters and $
+                    var cursor = editor.getCursor(); // Get current cursor position
+                    var line = editor.getLine(cursor.line); // Get current line
+                    var start = cursor.ch; // Get cursor position
+                    var end = start;
+                    // Move cursor backward to find the start of the word
+                    while (end < line.length && word.test(line.charAt(end))) ++end;
+                    while (start && word.test(line.charAt(start - 1))) --start;
+                    var prefix = line.slice(start, end); // Extract the word
+                    var list = javaSuggestions.filter(function(item) {
+                        return item.startsWith(prefix);
+                    });
+                    return {
+                        list: list,
+                        from: CodeMirror.Pos(cursor.line, start),
+                        to: CodeMirror.Pos(cursor.line, end)
+                    };
+                }
+            }
+        });
+    </script>
+</body>
+</html>

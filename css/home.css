@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* font-family: Arial, sans-serif; */
+    background-image: linear-gradient( 138deg,  rgba(32,201,255,1) 36.7%, rgba(0,8,187,1) 84.4%, rgba(255,255,255,1) 119.7% );
+
+
+}
+@font-face {
+    font-family: "myFirstFont";
+    src: url("../fonts/COMIC.TTF");
+    font-weight: 800;
+    font-style: normal;
+}
+#home{
+    background-color:cadetblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.navbar {
+    background-image: radial-gradient( circle 815px at 23.4% -21.8%,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+.navbar-brand {
+    font-size: 1.5em;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navbar-menu li a {
+    color: white;
+    text-decoration: none;
+}
+.body-container {
+    
+    height: 100%; 
+}
+.welcome{
+    display: flex;
+    justify-content: center; /* Horizontally center the welcome container */
+   
+}
+.welcome-container {
+    /* text-align: center; */
+}
+.welcome-text1{
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    color: white;
+    font-size: 80px;
+    font-weight: 800;    
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #CC00FF;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.welcome-text2{
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    color: white;
+    font-size: 80px;
+    font-weight: 800;    
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #CC00FF;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.welcome-text3{
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    color: white;
+    font-size: 80px;
+    font-weight: 800;    
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #CC00FF;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   
+}
+.motive-text{
+    display: flex;
+    justify-content: center;
+}
+.motive-text p{
+    color: white;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: "myFirstFont";
+}
+.join-compition-btn {
+    height: 70px;
+    width: 300px;
+    background-image: radial-gradient(circle 815px at 23.4% -21.8%, rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Shadow effect */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Text effect */
+}
+
+.join-compition-btn p{
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    font-family: "myFirstFont";
+}
+.join-btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upcoming-compitation-container{
+    margin: 30px;
+    border: 10px white solid;
+    border-radius: 10px;
+    
+    
+}
+.upcoming-compi-text{
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: "myFirstFont";
+    padding-top: 40px;
+    padding-left: 40px;
+}
+.upcoming-compi-card{
+    width: 400px;
+    height: 270px;
+    border: 3px white solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    margin: 20px;
+
+}
+.upcoming-comp-card-container{
+    padding: 20px;
+    
+    display: flex;
+    
+}
+
+.upcoming-compi-card img{
+    margin: 10px;
+   height: 200px;
+   width: 380px;
+   border-radius: 10px;
+
+}
+.upcoming-compi-card p{
+    margin: 0;
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    font-family: "myFirstFont";
+ }
+
+ .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-info,
+.footer-links,
+.social-media {
+    flex: 1;
+}
+
+.footer h3 {
+    margin-top: 0;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-media ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-media ul li {
+    margin: 0 10px;
+}
+
+.social-media ul li a img {
+    width: 30px;
+    height: 30px;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="./css/problemEditor.css">
+</head>
+<body>
+    <div class="input-container problem-id">
+        <label for="input-problem-id">ID</label>
+        <textarea type="text" id="input-problem-id" name="problemId" rows="1" cols="1"></textarea>
+    </div>
+    
+    <div class="input-container problem-title">
+        <label for="input-problem-title">Title</label>
+        <textarea id="input-problem-title" rows="3" name="problemTitle"></textarea>
+    </div>
+    
+    <div class="input-container problem-description">
+        <label for="input-problem-description">Description</label>
+        <textarea id="input-problem-description" rows="5" name="problemDescritption"></textarea>
+    </div>
+    <div class="input-container problem-example">
+        <label for="input-problem-example">Example</label>
+        <textarea id="input-problem-example" rows="5" name="problemExample"></textarea>
+    </div>
+    
+    <div class="input-container problem-prefix-code">
+        <label for="input-prefix-code">Prefix Code</label>
+        <textarea id="input-prefix-code" rows="20" name="problemPrefixCode"></textarea>
+    </div>
+    
+    <div class="input-container problem-postfix-code">
+        <label for="input-postfix-code">Postfix Code</label>
+        <textarea id="input-postfix-code" rows="20" name="problemPostfixCode"></textarea>
+    </div>
+    
+    <div class="input-container problem-empty-code">
+        <label for="input-empty-code">Empty Code</label>
+        <textarea id="input-empty-code" rows="10" name="emptyCode"></textarea>
+    </div>
+    
+    <div class="input-container problem-correct-code">
+        <label for="input-correct-code">Correct Code</label>
+        <textarea id="input-correct-code" rows="20" name="correctCode"></textarea>
+    </div>
+    
+    <div class="input-container problem-example-test-cases">
+        <label for="input-example-test-cases">Example Test Cases</label>
+        <textarea id="input-example-test-cases" rows="5" name="exampleTestCase"></textarea>
+    </div>
+
+    <div class="input-container" id="input-test-case-container">
+        <div class="input-test-case">
+            <label for="input-test-case-1">Testcase 1</label>
+            <textarea name="input-test-case-1" id="input-test-case-1" rows="5"></textarea>
+        </div>
+        <div class="input-test-case">
+            <label for="input-test-case-2">Testcase 2</label>
+            <textarea name="input-test-case-2" id="input-test-case-2" rows="5"></textarea>
+        </div>
+        <div class="input-test-case">
+            <label for="input-test-case-3">Testcase 3</label>
+            <textarea name="input-test-case-3" id="input-test-case-3" rows="5"></textarea>
+        </div>
+        <div class="input-test-case">
+            <label for="input-test-case-4">Testcase 4</label>
+            <textarea name="input-test-case-4" id="input-test-case-4" rows="5"></textarea>
+        </div>
+        <div class="input-test-case">
+            <label for="input-test-case-5">Testcase 5</label>
+            <textarea name="input-test-case-5" id="input-test-case-5" rows="5"></textarea>
+        </div>
+        <div class="input-test-case">
+            <label for="input-test-case-6">Testcase 6</label>
+            <textarea name="input-test-case-6" id="input-test-case-6" rows="5"></textarea>
+        </div>
+
+    </div>
+    
+
+    <button id="cancel">Cancel</button>
+    <button id="submit" >Submit</button>
+
+<script src="./js/jquery.js "></script>
+
+    <script type="module" src="./js/problemEditor.js"></script>
+
+</body>
+</html>

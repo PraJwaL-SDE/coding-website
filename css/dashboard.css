@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* font-family: Arial, sans-serif; */
+    background-image: linear-gradient( 138deg,  rgba(32,201,255,1) 36.7%, rgba(0,8,187,1) 84.4%, rgba(255,255,255,1) 119.7% );
+
+
+}
+@font-face {
+    font-family: "myFirstFont";
+    src: url("../fonts/COMIC.TTF");
+    font-weight: 800;
+    font-style: normal;
+}
+
+.navbar {
+    background-image: radial-gradient( circle 815px at 23.4% -21.8%,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+.navbar-brand {
+    font-size: 1.5em;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navbar-menu li a {
+    color: white;
+}
+.body-container{
+    height: 100vh;
+}
+#dashboard{
+    background-color:cadetblue;
+    padding: 10px;
+    border-radius: 10px;
+}
