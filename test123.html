@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Code Editor with Suggestions</title>
+    <!-- Include Monaco Editor library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.23.0/min/vs/loader.min.js"></script>
+    <style>
+        #editor {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Create a container for the editor -->
+    <div id="editor"></div>
+
+    <script>
+        // Initialize Monaco Editor
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.23.0/min/vs' }});
+        require(['vs/editor/editor.main'], function() {
+            var editor = monaco.editor.create(document.getElementById('editor'), {
+                value: '',
+                language: 'java'
+            });
+
+            // Function to provide suggestions
+            function provideSuggestions(model, position) {
+                // Get current word
+                var word = model.getWordAtPosition(position);
+                var suggestions = [];
+
+                // Provide suggestions based on the current word
+                if (word) {
+                    if (word.word === 'class') {
+                        suggestions.push({ label: 'class', kind: monaco.languages.CompletionItemKind.Keyword });
+                    } else if (word.word === 'System') {
+                        suggestions.push({ label: 'System', kind: monaco.languages.CompletionItemKind.Module });
+                        suggestions.push({ label: 'out', kind: monaco.languages.CompletionItemKind.Property });
+                        suggestions.push({ label: 'println', kind: monaco.languages.CompletionItemKind.Method });
+                    }
+                }
+
+                return {
+                    suggestions: suggestions
+                };
+            }
+
+            // Register completion item provider
+            monaco.languages.registerCompletionItemProvider('java', {
+                provideCompletionItems: function(model, position) {
+                    return provideSuggestions(model, position);
+                }
+            });
+            editor.onKeyDown(function(event) {
+                if (event.keyCode === monaco.KeyCode.Enter) {
+                    // Print the code after Enter key press
+                    console.log(editor.getValue());
+                }
+            });
+        });
+    </script>
+</body>
+</html>

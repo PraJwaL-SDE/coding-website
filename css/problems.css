@@ -1,0 +1,124 @@
+.body-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+#problems{
+    background-color:cadetblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* font-family: Arial, sans-serif; */
+    background-image: linear-gradient( 138deg,  rgba(32,201,255,1) 36.7%, rgba(0,8,187,1) 84.4%, rgba(255,255,255,1) 119.7% );
+
+}
+@font-face {
+    font-family: "myFirstFont";
+    src: url("../fonts/COMIC.TTF");
+    font-weight: 800;
+    font-style: normal;
+}
+
+.navbar {
+    background-image: radial-gradient( circle 815px at 23.4% -21.8%,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-brand {
+    font-size: 1.5em;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navbar-menu li a {
+    color: white;
+}
+
+.problem-list-container{
+    width: 50%;
+}
+.title-row{
+    display: flex;
+    flex-direction: row;
+    border: 5px rgb(255, 255, 255) solid;
+    height: 50px;
+    align-items: center;
+    margin:0 20px;
+    padding-left: 40px;
+    font-size: 18px;
+    background-color: gray;
+    color: white;
+    border-radius: 20px;
+}
+.title-title{
+    width: 400px;
+}
+.difficulty-title{
+    
+}
+.problem{
+    display: flex;
+    flex-direction: row;
+    border: 5px rgb(255, 255, 255) solid;
+    height: 50px;
+    align-items: center;
+    margin:0 20px;
+    padding-left: 20px;
+    font-size: 18px;
+    background-color: gray;
+    color: white;
+    border-radius: 20px;    
+}
+.problem-title{
+    width: 400px;
+}
+.problem-difficulty{
+    margin-left: 20px;
+}
+.problem-solve-btn {
+    margin-left: 60px;
+    height: 40px;
+    padding: 0 40px;
+    text-align: center;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    word-spacing: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-size: 18px; 
+    cursor: pointer;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.problem-solve-btn:hover {
+    background-color: #45a049;
+    box-shadow: 0 12px 20px 0 rgba(0,0,0,0.2);
+}
+

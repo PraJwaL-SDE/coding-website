@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./code_runner.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/theme/3024-night.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/theme/3024-day.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/theme/material.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/theme/rubyblue.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/show-hint.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/hint/show-hint.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/addon/comment/comment.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-left-container" id="nav-left-container"></div>
+        <div class="nav-mid-contianer" id="nav-mid-container">
+            <div class="run-button" id="run-button">Run</div>
+            <div class="submit-btn" id="submit-btn">Submit</div>
+        </div>
+        <div class="nav-right-contianer" id="nav-right-container"></div>
+    </nav>
+
+    <div class="body-container" id="body-container">
+        <div class="left-container" id="left-container">
+            <div id="problem-data-load"></div>
+            <div class="problem-title" id="problem-title">Problem title</div>
+            <div class="problem-type-container" id="problem-type-container">
+                <!-- <div class="problem-type" id="problem-level"></div>
+                <div class="problem-type" id="problem-topics"></div> -->
+            </div>
+            <div class="problem-description" id="problem-description">
+                Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+                <br>You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+                <br>You can return the answer in any order.
+                <div class="example-container" id="example-container">
+                    <div class="example" id="example">
+                        <div class="example-title" id="example-title">Example 1</div>
+                        <div class="example-line" id="example-line">
+                            <div class="example-title-text" id="example-title-text">Input:</div>
+                            <div class="example-content-text" id="example-content-text">nums = [2,7,11,15], target = 9</div>
+                        </div>
+                        <div class="example-line" id="example-line">
+                            <div class="example-title-text" id="example-title-text">Output:</div>
+                            <div class="example-content-text" id="example-content-text">[0,1]</div>
+                        </div>
+                        <div class="example-line" id="example-line">
+                            <div class="example-title-text" id="example-title-text">Explanation:</div>
+                            <div class="example-content-text" id="example-content-text">Because nums[0] + nums[1] == 9, we return [0, 1].</div>
+                        </div>                        
+                        
+                    </div>
+                    <div class="example" id="example">
+                        <div class="example-title" id="example-title">Example 2</div>
+                        <div class="example-line" id="example-line">
+                            <div class="example-title-text" id="example-title-text">Input:</div>
+                            <div class="example-content-text" id="example-content-text">nums = [3,2,4], target = 6</div>
+                        </div>
+                        <div class="example-line" id="example-line">
+                            <div class="example-title-text" id="example-title-text">Output:</div>
+                            <div class="example-content-text" id="example-content-text">[1,2]</div>
+                        </div>
+                                               
+                        
+                    </div>
+                    <div class="example" id="example">
+                        <div class="example-title" id="example-title">Example 3</div>
+                        <div class="example-line" id="example-line">
+                            <div class="example-title-text" id="example-title-text">Input:</div>
+                            <div class="example-content-text" id="example-content-text">nums = [3,3], target = 6</div>
+                        </div>
+                        <div class="example-line" id="example-line">
+                            <div class="example-title-text" id="example-title-text">Output:</div>
+                            <div class="example-content-text" id="example-content-text">[0,1]</div>
+                        </div>
+                                               
+                        
+                    </div>
+                </div>
+                <div class="constrain-container" id="constrain-container">
+                    <ul>
+                        <li>2 <= nums.length <= 10<sup>4</sup></li>
+                        <li>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></li>
+                        <li>-10<sup>9</sup> <= target <= 10<sup>9</sup></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="problem-review-container" id="problem-review-container">
+                <!-- <div class="like-option" id="like-option">
+                    <img src="./images/icons8-facebook-like-100-light.png" alt="">
+                    <div class="like-count" id="like-count">0</div>
+                </div>
+                <div class="dislike-count" id="dislike-count">
+                    <img src="./images/icons8-thumbs-down-24.png" alt="">
+                </div> -->
+            </div>
+
+            <div class="main-output-container" id="outputBox"
+            style="
+            color: black;
+            height:50vh;
+            width:45%;
+            background-color:white; 
+            position: absolute;
+            bottom: 15px;
+            display: flex;
+            margin:20px;
+            margin-top:0px;
+            flex-direction: column;
+            align-items: start;
+            padding:20px 10px;
+            padding-top:0px;
+            left:0;
+            bottom:0;
+            border-radius: 5px;
+            overflow: auto;
+
+            "> 
+                <div  class="output-top-bar-options" 
+                    style="
+                    width:100%;
+                    display: flex;
+                    
+                    flex-direction: column;
+                    position: sticky; top: 0;
+                    padding-top:20px;
+                    align-items: end;
+                    background-color: white; z-index: 1;
+                    "
+                >
+                    <div class="close" id="close-output-dialog"
+                    style="
+                    color: white;
+                    height:20px;
+                    width:20px;
+                    background-color:rgb(29, 34, 38);
+                    border-radius: 5px;
+                    display:flex;
+                    padding-left: 10px; 
+                    cursor: pointer;                  
+                    ">X</div>
+                </div>
+
+                <p id="outputText"></p>
+
+
+            </div>
+
+        </div>
+        <div class="right-container" id="right-container">
+            <div class="code-editor-container" id="code-editor-container">
+                <div class="code-title" id="code-title">Code</div>
+                <div class="code-editor-option-container" id="code-editor-option-container">
+                    <div class="language-option" id="language-option">Java</div>
+                </div>
+
+                <div class="code-editor" id="code-editor">
+                    <textarea type="text" id="textbox-code" ></textarea>
+                </div>
+            </div>
+            <div class="test-cases-container" id="test-cases-container">
+                <div class="test-case-title" id="test-case-title">Testcase</div>
+                <div class="test-case-scrollable-container" id="test-case-scrollable-container">
+                    <div class="test-case-option-row" id="test-case-option-row">
+                        <div class="test-case-button" id="test-case-button">
+                            <p>Case 1</p>
+                        </div>
+                        
+                    </div>
+                    <div class="test-case-input-container" id="test-case-input-container">
+                        <textarea name="" id="test-case-textarea" ></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="./js/jquery.js"></script> -->
+    <script type="module" src="./code_runner2.js"></script>
+    <!-- <script type="module" src="./js/code_editor_keymap.js"></script> -->
+
+    <script>
+
+    </script>
+
+</body>
+</html>

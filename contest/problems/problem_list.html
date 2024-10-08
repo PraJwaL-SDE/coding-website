@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Page</title>
+    <link rel="stylesheet" href="problem_list.css">
+</head>
+<body>
+    
+    <div class="left-container" id="left-container">
+        <div class="problem-row">
+            <p>Title of the problem</p>
+            <button class="solve-btn" id="solve-btn" data-eid="1">solve</button>
+
+        </div>
+        <div class="problem-row">
+            <p>Title of the problem</p>
+            <button class="solve-btn">solve</button>
+
+        </div>
+        <div class="problem-row">
+            <p>Title of the problem</p>
+            <button class="solve-btn">solve</button>
+
+        </div>
+        <div class="problem-row">
+            <p>Title of the problem</p>
+            <button class="solve-btn">solve</button>
+
+        </div>
+
+    </div>
+    <div class="right-container">
+        <h1>Leaderboard</h1>
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Time</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>User1</td>
+                    <td>2:35</td>
+                    <td>95%</td>
+                </tr>
+                <tr>
+                    <td>User2</td>
+                    <td>3:10</td>
+                    <td>90%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./problem_list.js"></script>
+</body>
+</html>

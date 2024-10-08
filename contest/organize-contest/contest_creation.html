@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Contest</title>
+    <link rel="stylesheet" href="contest_creation.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Contest</h1>
+        <form action="">
+            <div class="form-group">
+                <label for="organizer">Organizer:</label>
+                <input type="text" id="organizer" name="organizer">
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div class="form-group">
+                <label for="time-from">Time From:</label>
+                <input type="time" id="time-from" name="time-from">
+            </div>
+            <div class="form-group">
+                <label for="time-to">Time To:</label>
+                <input type="time" id="time-to" name="time-to">
+            </div>
+            <div class="form-group">
+                <label for="format">Format:</label>
+                <select id="format" name="format">
+                    <option value="online">Online</option>
+                    <option value="offline">Offline</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="motive">Motive:</label>
+                <textarea id="motive" name="motive" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="benefits">Benefits:</label>
+                <div class="benefits">
+                    <input type="text" id="benefit1" name="benefit1" placeholder="Benefit 1">
+                    <input type="text" id="benefit2" name="benefit2" placeholder="Benefit 2">
+                    <input type="text" id="benefit3" name="benefit3" placeholder="Benefit 3">
+                    <input type="text" id="benefit4" name="benefit4" placeholder="Benefit 4">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="organizer-about">About Organizer:</label>
+                <textarea id="organizer-about" name="organizer-about" rows="4"></textarea>
+            </div>
+            <label for="buttonCount">Select No. of Questions:</label>
+            <select id="buttonCount" name="numbers">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <div id="problem">
+
+            </div>            
+
+            <div class="form-group">
+                <button type="submit" class="inactive">Create Contest</button>
+            </div>
+        </form>
+    </div>
+    <script src="../../js/jquery.js"></script>
+    <script type="module" src="./contest_creation.js"></script>
+</body>
+</html>

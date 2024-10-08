@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+    <div class="body-container">
+        <div class="main-container">
+            <div class="login-title">Register</div>
+            <div class="input-container">
+                <input id="email" type="text" placeholder="Email">
+            </div>
+            <div class="input-container">
+                <input id="username" type="text" placeholder="Username">
+            </div>
+            <div class="input-container">
+                <input id="password" type="password" placeholder="Password">
+            </div>
+            <button class="login-button" onclick="registerUser()">Register</button>
+            <div class="other-option-container">
+                <div class="forget-password">Have an Account ?</div>
+                <a class="sign-up" href="../login/">Log in</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Your JavaScript code -->
+    <script>
+        $.ajax({
+            type:'GET',
+            url:'../check_auth.php',
+            success:function(response) {
+                // Handle success response
+                console.log(response);
+                if(response==1)
+                window.location.href = 'home.html';               
+
+            }
+        })
+        function registerUser() {
+            var email = $('#email').val();
+            var username = $('#username').val();
+            var password = $('#password').val();
+
+            // Regular expression for email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Check if email is empty or does not match the email pattern
+            if (email === '' || !email.match(emailRegex)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Make sure all fields are filled
+            if (username === '' || password === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+
+            // AJAX request to send data to server
+            $.ajax({
+                type: 'POST',
+                url: '../user_registration.php', // Change this to your server endpoint
+                data: {
+                    email: email,
+                    username: username,
+                    password: password
+                },
+                success: function(response) {
+                    // Handle success response
+                    if(response==1)
+                    window.location.href = '../../';
+                    else
+                    alert(response);
+
+                },
+                error: function(xhr, status, error) {
+                    // Handle error response
+                    console.error(xhr.responseText);
+                    alert('An error occurred while registering user.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
